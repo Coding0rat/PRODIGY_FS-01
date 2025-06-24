@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Interactive Nav Menu with Hover Images</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            background-color: #333;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 10px;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 40px;
+            text-align: center;
+        }
+
+        /* Image container */
+        .image-container {
+            display: inline-block;
+            margin: 20px;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .image-container img {
+            width: 300px;
+            height: 200px;
+            transition: transform 0.3s ease;
+            border-radius: 10px;
+        }
+
+        .image-container img:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+
+    <nav id="navbar">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="home">
+        <h1>Electronics</h1>
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='laptop.jpg') }}" alt="Home Image 1"><br>
+            Asus Laptop
+        </div>
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='tv.jpg') }}" alt="Home Image 2"><br>
+            Sony TV
+        </div>
+    </section>
+
+    <section id="services">
+        <h1>Fashion</h1>
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='dress.jpg') }}" alt="Services Image 1"><br>
+            Mens Fashion
+        </div>
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='OIP.jpg') }}" alt="Services Image 2"><br>
+            Womens Fashion
+        </div>
+    </section>
+
+    <section id="about">
+        <h1>Accesories</h1>
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='bracelet.jpg') }}" alt="About Image 1"><br>
+            Bracelet
+        </div>
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='bracelet1.jpg') }}" alt="Contact Image 1"><br>
+            Bangles
+        </div>
+    </section>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
